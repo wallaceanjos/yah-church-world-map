@@ -1,0 +1,261 @@
+body {
+  background-color: #fafafa;
+  color: rgb(0, 0, 0);
+  
+  }
+  /* CLASSES DO BOOTSTRAP MODIFICADAS */
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #212121;
+  background-color: transparent;
+  border-bottom: 0px solid #170f49;
+  box-shadow: inset 0px -3px 0px #170f49;
+  }
+  .nav-tabs .nav-link {
+  border: 0px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  }
+  .nav-link {
+  display: block;
+  padding: .5rem 1rem;
+  }
+
+  a, a:hover  {
+  cursor: pointer;
+  color: #212121;
+  }
+  .worldmap-tabs{
+  border:none
+  }
+  .worldmap-tabs > li > a{
+  padding: 15px 30px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  }
+
+  /* FIM CLASSES DO BOOTSTRAP MODIFICADAS */
+body{
+overflow: overlay;
+}
+a {
+color: #170f49;
+}
+
+a:hover {
+color: #212121;
+
+}
+
+a.world-pill {
+background-color: transparent;
+border: 2px solid #170f49;
+border-radius: 100px;
+color: #212121;
+text-transform: uppercase;
+padding: 5px 15px;
+margin: 5px 5px;
+display: inline-block;
+font-size: 11px;
+font-weight: bold;
+letter-spacing: 1px;
+transition: all linear 100ms;
+}
+
+a.world-pill:hover {
+background-color: #170f49;
+color: white;
+box-shadow: 0px 5px 5px #00000044;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+color: #000;
+background-color: #eee;
+border-right: 2px solid #170f49;
+border-radius: 50px 3px 3px 50px;
+}
+
+.multiuse-pages-section-programacao-tabs {
+background-color: #eeeeee;
+color: var(--white);
+text-align: center;
+padding: 80px 0;
+border-radius: 8px;
+max-height: 100vh;
+overflow: auto;
+}
+
+.multiuse-pages-section-programacao-tabs.blue-gradient {
+background: linear-gradient(40deg, #212121, #170f49, #170f49) !important;
+}
+
+.multiuse-pages-section-programacao-tabs .culto-thumb {
+width: 250px;
+height: 100%;
+filter: grayscale(0.5);
+}
+
+.accordion {
+display: flex;
+flex-wrap: wrap;
+height: auto;
+width: 100%;
+border-radius: 10px;
+color: var(--dark);
+}
+
+.accordion__content {
+order: 1;
+flex-grow: 1;
+width: 100%;
+height: 100%;
+display: none;
+}
+
+.accordion__label {
+background-color: #170f49;
+font-weight: 600;
+font-size: 14px;
+box-shadow: inset 0px 0px 0px 2px #ffffff;
+
+display: block;
+cursor: pointer;
+/* flex-grow: 1; */
+text-align: center;
+padding: 1% 5% 1% 5%;
+margin: 3px;
+border-radius: 100px;
+}
+
+.accordion__radio {
+display: none;
+}
+
+.accordion input[type='radio'] {
+display: none;
+}
+
+.accordion input[type='radio']+label {
+color: #ffffff;
+z-index: 1;
+}
+
+.accordion input[type='radio']:checked+label {
+background-color: #fafafa;
+font-weight: 600;
+box-shadow: inset 0px 0px 0px 2px #ffffff;
+color: #170f49;
+
+}
+
+.accordion input[type='radio']:checked+label+.accordion__content {
+display: block;
+margin-right: 0;
+border-left: 0px solid #d1d2d3;
+border-right: 0px solid #d1d2d3;
+border-bottom: 0px solid #d1d2d3;
+border-radius: 8px;
+background: #ffffff;
+}
+
+.accordion__content__image {
+max-width: 100%;
+max-height: 88%;
+margin: 3%;
+background-color: teal;
+}
+
+.accordion__content__text {
+margin-top: 1%;
+margin: 24px;
+}
+
+.accordion__content__text__title {
+margin-top: 3%;
+}
+
+.accordion__content__text__body {
+margin: 0;
+padding: 0;
+line-height: 1.6em;
+}
+
+@media (max-width: 900px) {
+.accordion {
+border: 0px solid #d1d2d3;
+}
+
+.accordion-tab--status {
+display: inline;
+}
+
+.accordion__content,
+.accordion__label {
+order: initial;
+}
+
+.accordion__content {
+flex-direction: column;
+}
+
+.accordion__label {
+width: 100%;
+margin-right: 0;
+margin-bottom: 1px;
+display: flex;
+justify-content: space-between;
+font-size: 1.2em;
+padding: 5% 6% 5% 6%;
+}
+
+.accordion__label:last-child {
+background-color: magenta;
+}
+
+.accordion__content__image__container {
+width: 100%;
+}
+
+.accordion__content__image {
+padding: 0;
+margin: 0;
+object-fit: cover;
+height: 300px;
+width: 100%;
+}
+
+.accordion__content__text {
+font-size: 0.9em;
+margin: 4% 5% 4% 5%;
+}
+
+.accordion__content__text__title {
+margin: 2% 0 2% 0;
+}
+
+.accordion__content__text__horizontal-line {
+width: 100%;
+}
+
+.accordion input[type='radio']+label span:after {
+content: '+';
+}
+
+.accordion input[type='radio']:checked+label span:after {
+content: '—';
+}
+
+.accordion input[type='radio']:checked+label {
+border: none;
+}
+
+.accordion input[type='radio']:checked+label+.accordion {
+border: none;
+}
+
+.accordion input[type='radio']:checked+label+.accordion__content {
+border: none;
+}
+}
