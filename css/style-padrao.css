@@ -36,9 +36,6 @@ body {
   }
 
   /* FIM CLASSES DO BOOTSTRAP MODIFICADAS */
-body{
-overflow: overlay;
-}
 a {
 color: #170f49;
 }
