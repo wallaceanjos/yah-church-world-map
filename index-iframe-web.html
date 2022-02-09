@@ -39,7 +39,7 @@ function setIframeHeightCO(id, ht) {
 // iframed document sends its height using postMessage
 function handleDocHeightMsg(e) {
     // check origin
-    if ( e.origin === 'https://wallaceanjos.github.io/yah-church-world-map/' ) {
+    if ( e.origin === 'https://wallaceanjos.github.io/' ) {
         // parse data
         var data = JSON.parse( e.data );
         // check data object
