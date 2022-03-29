@@ -1,0 +1,69 @@
+.pre-bod{
+    padding: 0;
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+  .bod > .social > a {
+      display: inline-block;
+      margin: 0px auto;
+      padding: 10px 40px;
+      text-align: center;
+  }
+  .bod{
+    width: 100%;
+    background-color: transparent;
+    border: 0px solid #222;
+    transition: ease-in-out box-shadow 1s;
+    line-height: 1.15;
+  }
+  
+  .bod > .social{margin:0;}
+  .bod > .social > a {
+    display: inline-block;
+    margin: 0px auto;
+    padding: 10px 30px;
+    text-align: center;
+    color: #170f49;
+    transition: all linear 100ms;
+  }
+  .bod > .social > a:hover {
+    color: #170f4988;
+  }
+  
+  :hover.bod {
+    box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+  .tab-content {
+    padding: 0 2rem 1rem 1rem;
+  }
+  /* loading animation begin */
+  @keyframes loadbar {
+    0%{
+      background-color: #170f49;
+      width: 0;
+      height: 5px;
+      opacity: 0.3;
+    }
+    97%{
+      background-color: #170f49; 
+      opacity: 1;
+      height: 4px;
+      width: 100%;
+    }
+    100%{
+      background-color: #170f49;
+      height: 0;
+      opacity: 1;
+    }
+  }
+  .la-anim-13 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    animation-name: loadbar;
+    animation-duration: 5s;
+  }
+  /* loading animation end */
