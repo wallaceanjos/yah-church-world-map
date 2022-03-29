@@ -4923,7 +4923,7 @@
             <img src="img/mundo.png" alt="Mundo"
               style="width:100%; height:auto; padding: 50px 5vw; max-width: 800px;">
             <div class="row">
-              <div class="col-3">
+              <div class="p-0 col-md-3">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                   <a class="nav-link active" id="mundo-africa-tab" data-toggle="pill" href="#mundo-africa"
@@ -4935,7 +4935,7 @@
 
                 </div>
               </div>
-              <div class="col-9">
+              <div class="p-0 col-md-9">
                 <div class="tab-content" id="v-pills-tabContent">
 
                   <!-- [INÍCIO] SECTION - AFRICA
@@ -5979,31 +5979,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.min.js"></script>
 
-<!-- Cross domain iframe resize -->
-<script type="text/javascript">
-  // Get height of document
-function getDocHeight(doc) {
-    doc = doc || document;
-    // from http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript
-    var body = doc.body, html = doc.documentElement;
-    var height = Math.max( body.scrollHeight, body.offsetHeight, 
-        html.clientHeight, html.scrollHeight, html.offsetHeight );
-        console.log(height)
-    return height;
-}
-
-// send docHeight onload
-function sendDocHeightMsg(e) {
-    var ht = getDocHeight();
-    parent.postMessage( JSON.stringify( {'docHeight': ht} ), '*' );
-}
-
-// assign onload handler 
-if ( window.addEventListener ) {
-    window.addEventListener('load', sendDocHeightMsg, false);
-} else if ( window.attachEvent ) { // ie8
-    window.attachEvent('onload', sendDocHeightMsg);
-}
-</script>
+<script src="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js"></script> 
 </body>
 </html>
