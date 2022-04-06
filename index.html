@@ -11,6 +11,11 @@
       <!-- [INÍCIO] CONFIG - LARGURA DA TELA
     -- =============================================== -->
       <style>
+        html, body{
+          background: transparent;
+          padding:0px;
+          margin:0px;
+        }
         body{
           font-family: Arial, Helvetica, sans-serif;
         }
@@ -371,7 +376,7 @@
 
           .accordion__content__text {
             font-size: 0.9em;
-            margin: 4% 5% 4% 5%;
+            margin: 0;
           }
 
           .accordion__content__text__title {
@@ -426,12 +431,14 @@
           display: flex;
           flex-flow: column;
           text-align:left;
+          padding:0;
         }
 
         /* Tab button */
         .radio-tabs .tab {
           display: flex;
           cursor: pointer;
+          padding:0;
         }
 
         .radio-tabs .tab:hover {
@@ -492,7 +499,7 @@
         }
 
         .radio-tabs .panels {
-          
+          padding:0;
         }
         .radio-tabs .panels .accordion{
             color:black;
@@ -552,10 +559,10 @@
         }
 
         .accordion-inner input[type='checkbox']:checked+label {
-        background-color: #fafafa;
+        background-color: #009ea5;
         font-weight: 600;
         box-shadow: inset 0px 0px 0px 2px #ffffff;
-        color: #170f49;
+        color: #ffffff;
 
         }
 
@@ -574,7 +581,7 @@
         max-width: 100%;
         max-height: 88%;
         margin: 3%;
-        background-color: teal;
+        background-color: #009ea5;
         }
 
         .accordion-inner__content__text {
@@ -647,10 +654,24 @@
 
           .accordion-inner input[type='checkbox']+label span:after {
           content: '+';
+          background-color: #ffffff;
+          color:#170f49;
+          width: 18px;
+          line-height: 18px;
+          font-size: 18px;
+          display: block;
+          border-radius: 50px;
           }
 
           .accordion-inner input[type='checkbox']:checked+label span:after {
           content: '-';
+          background-color: #ffffff;
+          color:#009ea5;
+          width: 18px;
+          line-height: 18px;
+          font-size: 24px;
+          display: block;
+          border-radius: 50px;
           }
 
           .accordion-inner input[type='checkbox']:checked+label {
@@ -732,7 +753,7 @@
       </style>
 
       <section class="multiuse-pages-section-tabs">
-        <div class="container-fluid p-0">
+        <div class="container-fluid p-2">
           <div class="container p-0">
             <div class="accordion">
 
@@ -743,7 +764,7 @@
               <div class="accordion__content row p-0 m-0">
                 <div class="accordion__content__image__container">
                   <div class="accordion__content__text">
-                    <div class="row m-0">
+                    <div class="m-0">
                       <img src="https://i.ibb.co/drpyF6c/brasil.png" alt="Brasil" style=" width: 100%; height: auto; padding: 50px 5vw; max-width: 800px;"/>
                       <!-- HORIZONTAL TABS -->
                       <div class="radio-tabs row">
@@ -6068,7 +6089,7 @@
               <div class="accordion__content row p-0 m-0">
                 <div class="accordion__content__image__container">
                   <div class="accordion__content__text">
-                    <div class="row m-0">
+                    <div class="m-0">
                       <img src="https://i.ibb.co/Y75kKVq/mundo.png" alt="Brasil" style="width: 100%; height: auto; padding: 50px 5vw; max-width: 800px;"/>
                       <!-- HORIZONTAL TABS -->
                       <div class="radio-tabs row">
