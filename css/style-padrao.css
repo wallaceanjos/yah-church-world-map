@@ -74,24 +74,6 @@ border-right: 2px solid #170f49;
 border-radius: 50px 3px 3px 50px;
 }
 
-.multiuse-pages-section-programacao-tabs {
-background-color: #eeeeee;
-color: #ffffff;
-text-align: center;
-padding: 80px 0;
-border-radius: 8px;
-}
-
-.multiuse-pages-section-programacao-tabs.blue-gradient {
-background: linear-gradient(40deg, #212121, #170f49, #170f49) !important;
-}
-
-.multiuse-pages-section-programacao-tabs .culto-thumb {
-width: 250px;
-height: 100%;
-filter: grayscale(0.5);
-}
-
 .accordion {
 display: flex;
 flex-wrap: wrap;
