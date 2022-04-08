@@ -1,402 +1,918 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cursos</title>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://wallaceanjos.github.io/yah-church-world-map/css/mdb.min.css">
-    <link rel="stylesheet" href="https://wallaceanjos.github.io/yah-church-world-map/css/style-padrao.css">
-    <link rel="stylesheet" href="https://wallaceanjos.github.io/yah-church-world-map/css/socialbar.css">
-    
-    </head>
-      
-<body>
-  <!--Main Navigation-->
-  <div class="position-relative overflow-hidden p-3 p-md-5 text-center" style="background: url(https://wallaceanjos.github.io/yah-church-world-map/img/Header_Principal.png) no-repeat center center / contain; min-height: 350px;"></div>
-  <!--Main Layout-->
-  <!--Div: Container -->
-  <div class="container py-5">
-    <!--Section: Testimonials v.3-->
-    <section id="section2" class="section team-section text-center wow fadeIn" data-wow-delay="0.3s">
-      <!--Section heading-->
-      <a href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-detalhes/"><img src="https://wallaceanjos.github.io/yah-church-world-map/img/Botao_ConhecaOsCursos_Podium.png" alt="" style="max-width: 792px; width: 100%;"></a>
-      <!--Section description-->
-      <p class="text-center mb-5 mx-auto w-responsive lead">A vida cristã é frequentemente retratada na Bíblia por meio de figuras esportivas. O autor de Hebreus nos fala da “corrida que nos está proposta”, uma visão da “maratona da vida”. A coroa de que a Bíblia fala em diversos textos (Tiago 1.12, 1 Pedro 5.4 e Apocalipse 3.11) não é a coroa de um rei, mas a coroa de louros dedicada aos vencedores.<br>
-      Com o programa Podium queremos que você tenha uma visão clara do significado da vida cristã; uma visão de crescimento constante, de superação de desafios, de perseverança e de conquistas. <br>
-      A figura do Podium lhe dará o entendimento dos passos a seguir e de como o ministério de ensino lhe ajudará a ser vitorioso em sua vida com Jesus. Nossa visão é que todos são líderes e tem um chamado a cumprir. O objetivo do ministério de ensino, portanto, é dar os fundamentos necessários para que você conheça melhor a Deus e o seu propósito para sua vida, além de dar-lhe instrumentos para que continue crescendo na vida cristã.<br>
-      E você? Já veio para o Podium? Em que degrau está? Ouro, prata ou bronze?<br>
-      </p>
-      <p class="text-center mx-auto w-responsive lead">Veja a seguir nossa proposta e prepare-se para o próximo degrau.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/matcha-ds@1.0.5/assets/utilities/mds-bs.css" rel="stylesheet" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <div class="mds-bootstrap-5">
+      <!-- [INÍCIO] CONFIG - LARGURA DA TELA
+      -- =============================================== -->
+      <style>
+        html,
+        body {
+          background: transparent;
+          padding: 0px;
+          margin: 0px;
+        }
+        .page.container.row {
+          width: 100%;
+          padding: 0;
+        }
+        #page.container,
+        .home-about > .section-body {
+          margin: 0px;
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          border: 0;
+          padding: 0;
+          /* overflow: hidden; */
+          background-color: transparent;
+        }
+        .page-section {
+          padding: 0px;
+          margin: 0;
+        }
 
-    </section>
-    
-  </div>
+        /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap'); */
+        :root {
+          --white: #fff;
+          --primary: #1e8989;
+          --primary-soft: #98cfcf;
+          --primary-dark: #176666;
+          --secondary: #f4f4f4;
+          --secondary-soft: #1e898988;
+        }
 
-  <!--Div: Container -->
-  <div class="container py-5">
-    <!--Section: Testimonials v.3-->
-    <section id="section2" class="section team-section text-center pb-5 mb-5 wow fadeIn" data-wow-delay="0.3s">
-      <!-- Grid row -->
-      <div class="row mb-4 m-0 ">
-        <!-- Card Casados Para Sempre -->
-        <div class="col-lg-4 card-live p-0">
-          <img src="https://wallaceanjos.github.io/yah-church-world-map/img/AbaBronze_Podium.png" alt="" style="max-width: 500px; width: 100%;">
-          <p class="text-left w-responsive lead mx-auto pt-3 pr-5">Você conquista o bronze ao concluir o "Curso Vida Cristã". O curso tem duração de sete meses e lhe dá os fundamentos essenciais de uma vida profunda com Deus.</p>
+        /*Background e Foreground*/
+        .mds-bootstrap-5 .fg-primary {
+          color: var(--primary) !important;
+        }
+        .mds-bootstrap-5 .bg-primary {
+          background-color: var(--primary) !important;
+        }
+        .mds-bootstrap-5 .fg-white {
+          color: var(--white) !important;
+        }
+
+        /*Botões Basic*/
+        .mds-bootstrap-5 .btn {
+          font-size: 1em !important;
+          border-radius: 8px !important;
+          padding: 8px 16px !important;
+          border: 2px solid var(--primary);
+          color: var(--primary);
+        }
+        .mds-bootstrap-5 .btn:hover {
+          background-color: var(--primary);
+          color: var(--secondary);
+          border: 2px solid var(--primary);
+        }
+        .mds-bootstrap-5 .btn:focus {
+          color: #fff;
+          background-color: var(--primary-dark);
+          border-color: var(--primary-dark);
+          box-shadow: 0 0 0 0.25em var(--primary-soft);
+        }
+        .mds-bootstrap-5 .btn:active:focus {
+          box-shadow: 0 0 0 0.25em var(--primary-soft);
+        }
+
+        /*Botões Filled Primary*/
+        .mds-bootstrap-5 .btn-primary {
+          font-size: 1em !important;
+          border-radius: 8px !important;
+          padding: 8px 16px !important;
+          border: 2px solid var(--primary);
+          background-color: var(--primary);
+          color: var(--white);
+        }
+        .mds-bootstrap-5 .btn-primary:hover {
+          background-color: var(--primary);
+          color: var(--secondary);
+          border: 2px solid var(--primary);
+        }
+        .mds-bootstrap-5 .btn-primary:focus {
+          color: #fff;
+          background-color: var(--primary-dark);
+          border-color: var(--primary-dark);
+          box-shadow: 0 0 0 0.25em var(--primary-soft);
+        }
+        .mds-bootstrap-5 .btn-primary:active:focus {
+          box-shadow: 0 0 0 0.25em var(--primary-soft);
+        }
+
+        /*Multiuse Page Reset*/
+        .page-inner body {
+          background-color: var(--white);
+        }
+
+        .page-inner .row > [class*='col'] {
+          padding: 0 0;
+          margin: 0 0;
+        }
+
+        .page,
+        .page-inner {
+          width: 100%;
+          min-width: 100%;
+          margin: 0;
+          padding: 0;
+          line-height: 2em !important;
+          background-color: var(--secondary);
+        }
+
+        .page-inner span.badge,
+        .page-inner p.badge {
+          font-size: 0.75em;
+          line-height: 1em !important;
+          margin: 0;
+        }
+
+        .page-inner.h1,
+        .page-inner h1 {
+          font-size: 2em !important;
+          font-weight: bold;
+        }
+
+        .page-inner.h2,
+        .page-inner h2 {
+          font-size: 1.6em !important;
+        }
+
+        .page-inner .h4,
+        .page-inner h4 {
+          font-size: 1.4em !important;
+          font-weight: bold;
+        }
+
+        .page-inner p {
+          line-height: 2em !important;
+          font-size: 1em !important;
+        }
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      </style>
+      <!-- =============================================== --
+      -- [FINAL] CONFIG - LARGURA DA TELA -->
+
+      <!-- [INÍCIO] SECTION - MIDIAS SOCIAIS
+      -- =============================================== -->
+      <section class="multiuse-pages-section-socialbar">
+        <div class="socialbar">
+          <div class="loading-animation"></div>
+          <div class="social-link-group text-center">
+            <a href="#" target="blank">
+              <img
+                src="https://yahchurch.com/assets/batistapalavraviva/images/facebook.svg"
+                alt=""
+              />
+            </a>
+            <a href="https://www.instagram.com/yah.church/" target="blank">
+              <img
+                src="https://yahchurch.com/assets/batistapalavraviva/images/instagram.svg"
+                alt=""
+              />
+            </a>
+            <a href="https://www.youtube.com/c/YAHChurch" target="blank">
+              <img
+                src="https://yahchurch.com/assets/batistapalavraviva/images/youtube.svg"
+                alt=""
+              />
+            </a>
+          </div>
         </div>
-        <div class="col-lg-4 card-live p-0">
-          <img src="https://wallaceanjos.github.io/yah-church-world-map/img/AbaPrata_Podium.png" alt="" style="max-width: 500px; width: 100%;">
-          <p class="text-left w-responsive lead mx-auto pt-3 pr-5">Você sobe de degrau e conquista a prata ao fazer o "Curso Liderança". O curso tem duração de 10 meses, dividido em cinco matérias bimestrais. Seu objetivo é prepara-lo  para servir a Deus e abençoar vidas.</p>
-        </div>
-        <div class="col-lg-4 card-live p-0">
-          <img src="https://wallaceanjos.github.io/yah-church-world-map/img/AbaOuro_Podium.png" alt="" style="max-width: 500px; width: 100%;">
-          <p class="text-left w-responsive lead mx-auto pt-3 pr-5">Neste nível você vai ter liberdade para fazer seu próprio currículo. O ouro será conquistado quando você concluir cinco dos cursos ou seminários do ministério de ensino (além dos cursos básicos do bronze e prata). Você poderá escolher entre as matérias do segundo nível do Curso Liderança, os cursos do Ministério de Casais ou os seminários.</p>
+      </section>
+      <style>
+        @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css');
+
+        /* loading animation begin */
+        @keyframes loadbar {
+          0% {
+            background-color: var(--primary);
+            width: 0;
+            height: 4px;
+            opacity: 0.3;
+          }
+
+          97% {
+            background-color: var(--primary);
+            opacity: 1;
+            height: 4px;
+            width: 100%;
+          }
+
+          100% {
+            background-color: var(--primary);
+            height: 0;
+            opacity: 1;
+          }
+        }
+
+        .loading-animation {
+          position: relative;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          width: 100%;
+          animation-name: loadbar;
+          animation-duration: 5s;
+        }
+
+        /* loading animation end */
+        .multiuse-pages-section-socialbar {
+          padding: 0;
+          position: relative;
+          width: 100%;
+          margin: 0;
+        }
+
+        .multiuse-pages-section-socialbar .socialbar .social-link-group a {
+          display: inline-block;
+          margin: 0px auto;
+          padding: 10px 40px;
+          text-align: center;
+        }
+
+        .multiuse-pages-section-socialbar .socialbar {
+          width: 100%;
+          background-color: var(--secondary);
+          border: 0px solid #222;
+          transition: all linear 200ms;
+          line-height: 1.15;
+        }
+
+        .multiuse-pages-section-socialbar .socialbar .social-link-group {
+          margin: 0;
+        }
+
+        .multiuse-pages-section-socialbar .socialbar .social-link-group a {
+          display: inline-block;
+          margin: 0px auto;
+          padding: 10px 30px;
+          text-align: center;
+          color: var(--primary);
+          transition: all linear 200ms;
+        }
+
+        .multiuse-pages-section-socialbar
+          .socialbar
+          .social-link-group
+          a:hover {
+          color: #ffffff;
+        }
+
+        .multiuse-pages-section-socialbar :hover.socialbar {
+          box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .multiuse-pages-section-socialbar img {
+          height: 20px;
+          width: 20px;
+          display: flex;
+        }
+      </style>
+      <!-- =============================================== --
+      -- [FINAL] SECTION - MIDIAS SOCIAIS -->
+
+      <!--Banner-->
+      <div class="container-fluid text-center">
+        <img
+          src="https://wallaceanjos.github.io/yah-church-world-map/img/Header_Principal.png"
+          alt=""
+          style="max-width: 1400px; width: 100%"
+        />
+      </div>
+
+      <!--Intro -->
+      <div class="container py-5">
+        <!--Section: Testimonials v.3-->
+        <section class="text-center">
+          <!--Section heading-->
+          <a
+            href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-detalhes/"
+          >
+            <img
+              src="https://wallaceanjos.github.io/yah-church-world-map/img/Botao_ConhecaOsCursos_Podium.png"
+              alt=""
+              style="max-width: 792px; width: 100%"
+            />
+          </a>
+          <!--Section description-->
+          <p class="text-center lh-lg">
+            A vida cristã é frequentemente retratada na Bíblia por meio de
+            figuras esportivas. O autor de Hebreus nos fala da “corrida que nos
+            está proposta”, uma visão da “maratona da vida”. A coroa de que a
+            Bíblia fala em diversos textos (Tiago 1.12, 1 Pedro 5.4 e Apocalipse
+            3.11) não é a coroa de um rei, mas a coroa de louros dedicada aos
+            vencedores.<br />
+            Com o programa Podium queremos que você tenha uma visão clara do
+            significado da vida cristã; uma visão de crescimento constante, de
+            superação de desafios, de perseverança e de conquistas.<br />
+            A figura do Podium lhe dará o entendimento dos passos a seguir e de
+            como o ministério de ensino lhe ajudará a ser vitorioso em sua vida
+            com Jesus. Nossa visão é que todos são líderes e tem um chamado a
+            cumprir. O objetivo do ministério de ensino, portanto, é dar os
+            fundamentos necessários para que você conheça melhor a Deus e o seu
+            propósito para sua vida, além de dar-lhe instrumentos para que
+            continue crescendo na vida cristã.<br />
+            E você? Já veio para o Podium? Em que degrau está? Ouro, prata ou
+            bronze?<br />
+          </p>
+          <p class="text-center fw-bold lh-lg">
+            Veja a seguir nossa proposta e prepare-se para o próximo degrau.
+          </p>
+        </section>
+      </div>
+
+      <!--Níveis -->
+      <div class="container py-5">
+        <!--Section: Testimonials v.3-->
+        <section class="text-center">
+          <!-- Grid row -->
+          <div class="row m-0">
+            <!-- Card Casados Para Sempre -->
+            <div class="col-lg-4 card-live p-0">
+              <img
+                src="https://wallaceanjos.github.io/yah-church-world-map/img/AbaBronze_Podium.png"
+                alt=""
+                style="max-width: 500px; width: 100%"
+              />
+              <p class="text-center lh-lg p-3 pr-5">
+                Você conquista o bronze ao concluir o "Curso Vida Cristã". O
+                curso tem duração de sete meses e lhe dá os fundamentos
+                essenciais de uma vida profunda com Deus.
+              </p>
+            </div>
+            <div class="col-lg-4 card-live p-0">
+              <img
+                src="https://wallaceanjos.github.io/yah-church-world-map/img/AbaPrata_Podium.png"
+                alt=""
+                style="max-width: 500px; width: 100%"
+              />
+              <p class="text-center lh-lg p-3 pr-5">
+                Você sobe de degrau e conquista a prata ao fazer o "Curso
+                Liderança". O curso tem duração de 10 meses, dividido em cinco
+                matérias bimestrais. Seu objetivo é prepara-lo para servir a
+                Deus e abençoar vidas.
+              </p>
+            </div>
+            <div class="col-lg-4 card-live p-0">
+              <img
+                src="https://wallaceanjos.github.io/yah-church-world-map/img/AbaOuro_Podium.png"
+                alt=""
+                style="max-width: 500px; width: 100%"
+              />
+              <p class="text-center lh-lg p-3 pr-5">
+                Neste nível você vai ter liberdade para fazer seu próprio
+                currículo. O ouro será conquistado quando você concluir cinco
+                dos cursos ou seminários do ministério de ensino (além dos
+                cursos básicos do bronze e prata). Você poderá escolher entre as
+                matérias do segundo nível do Curso Liderança, os cursos do
+                Ministério de Casais ou os seminários.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!--Quando Iniciar-->
+      <div class="container-fluid p-0">
+        <img
+          src="https://wallaceanjos.github.io/yah-church-world-map/img/BannerQuandoPagina_Podium.jpg"
+          alt=""
+          class="w-100 m-0"
+        />
+        <div class="container py-5 text-center">
+          <p class="text-center lh-lg pt-3 pr-5">
+            Se você é novo convertido, logo após a participação no Encontro com
+            Deus, você já está pronto para ingressar no Curso Vida Cristã e
+            seguir no caminho de crescimento constante, que é a vontade de Deus
+            para todos os seus filhos. O curso, no entanto, não é indicado
+            somente para os novos convertidos; sua ênfase são os fundamentos
+            bíblicos para uma vida cristã abundante e poderá ser feito por
+            todos.
+          </p>
+          <p class="text-center lh-lg fw-bold pt-3 pr-5">
+            Todos podem, a qualquer momento, ingressar em quaisquer dos cursos
+            disponibilizados na grade.
+          </p>
+          <div class="text-center">
+            <a
+              href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-detalhes/"
+              ><img
+                src="https://wallaceanjos.github.io/yah-church-world-map/img/Botao_ConhecaOsCursos_Podium.png"
+                alt=""
+                style="max-width: 792px; width: 100%"
+            /></a>
+          </div>
         </div>
       </div>
-    </section>
-  </div>
-  <!--Main Navigation-->
-  <div class="position-relative overflow-hidden p-0 text-center">
-    <img src="https://wallaceanjos.github.io/yah-church-world-map/img/BannerQuandoPagina_Podium.jpg" alt="" class="w-100">
-    <p class="text-left w-responsive lead mx-auto pt-3 pr-5">
-      Se você é novo convertido, logo após a participação no Encontro com Deus, você já está pronto para ingressar no Curso Vida Cristã e seguir no caminho de crescimento constante, que é a vontade de Deus para todos os seus filhos. O curso, no entanto, não é indicado somente para os novos convertidos; sua ênfase são os fundamentos bíblicos para uma vida cristã abundante e poderá ser feito por todos.
 
-Todos podem, a qualquer momento, ingressar em quaisquer dos cursos disponibilizados na grade. 
-    </p>
-  </div>
-  <!--Div: Container -->
-<div class="container py-5">
+      <!--Grade Curricular-->
+      <div class="container">
+        <section class="text-center">
+          <div class="pb-5">
+            <img
+              src="https://wallaceanjos.github.io/yah-church-world-map/img/BotaoGradeCurricular_Podium.png"
+              alt=""
+              style="max-width: 800px; width: 100%"
+            />
+          </div>
+          <div class="row m-0 p-0">
+            <style>
+              .table-container {
+                overflow: auto;
+                box-shadow: inset -20px 0px 12px -20px #00000088,
+                  inset 20px 0px 12px -20px #00000088;
+              }
+              .table-shadow-container {
+                min-width: 1080px;
+                width: 100%;
+                background: blue;
+                background: linear-gradient(
+                  90deg,
+                  rgba(255, 255, 255, 1) 12px,
+                  rgba(255, 255, 255, 1) 12px,
+                  rgba(255, 255, 255, 0) calc(0% + 60px),
+                  rgba(255, 255, 255, 0) calc(100% - 60px),
+                  rgba(255, 255, 255, 1) calc(100% - 12px),
+                  rgba(255, 255, 255, 1) 12px
+                );
+                background: -moz-linear-gradient(
+                  90deg,
+                  rgba(255, 255, 255, 1) 12px,
+                  rgba(255, 255, 255, 1) 12px,
+                  rgba(255, 255, 255, 0) calc(0% + 60px),
+                  rgba(255, 255, 255, 0) calc(100% - 60px),
+                  rgba(255, 255, 255, 1) calc(100% - 12px),
+                  rgba(255, 255, 255, 1) 12px
+                );
+                background: -webkit-linear-gradient(
+                  0deg,
+                  rgba(255, 255, 255, 1) 12px,
+                  rgba(255, 255, 255, 1) 12px,
+                  rgba(255, 255, 255, 0) calc(0% + 60px),
+                  rgba(255, 255, 255, 0) calc(100% - 60px),
+                  rgba(255, 255, 255, 1) calc(100% - 12px),
+                  rgba(255, 255, 255, 1) 12px
+                );
+              }
 
-  <!--Main Navigation-->
-  <div class="position-relative overflow-hidden pb-5 text-center">
-    <a href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-detalhes/"><img src="https://wallaceanjos.github.io/yah-church-world-map/img/Botao_ConhecaOsCursos_Podium.png" alt="" style="max-width: 792px; width: 100%;"></a>
-  </div>
-  <div class="position-relative overflow-hidden pb-5 text-center">
-    <img src="https://wallaceanjos.github.io/yah-church-world-map/img/BotaoGradeCurricular_Podium.png" alt="" style="max-width: 1147px; width: 100%;">
-  </div>
+              .table-container table thead {
+                background: var(--primary);
+                border: var(--primary);
+                border-top: 0;
+              }
+              .table-container table.table > :not(:first-child) {
+                border-top: 0px;
+              }
+              .table-container table.table {
+                border: solid 1px var(--primary);
+                min-width: 100%;
+                width: 100%;
+              }
 
-</div>
+              .table-container table thead tr th {
+                color: white;
+                vertical-align: middle;
+                border-right: 1px solid white;
+              }
+              .table-container table thead tr th:last-child {
+                border-right: 0px;
+              }
+              .table-container table tbody tr td {
+                border: solid 1px var(--primary);
+              }
+            </style>
+            <div class="table-container p-0 mb-5">
+              <div class="table-shadow-container p-0 m-0">
+                <table class="table m-0 p-0 w-100">
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <h4 class="m-0 white-ic"><b>CURSO</b></h4>
+                      </th>
+                      <th scope="col">
+                        <h4 class="m-0 white-ic"><b>CLASSIFICAÇÃO</b></h4>
+                      </th>
+                      <th scope="col">
+                        <h4 class="m-0 white-ic"><b>DURAÇÃO</b></h4>
+                      </th>
+                      <th scope="col">
+                        <h4 class="m-0 white-ic"><b>MÉTODO</b></h4>
+                      </th>
+                      <th scope="col">
+                        <h4 class="m-0 white-ic"><b>CICLO DE LANÇAMENTO</b></h4>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="teal-ic">
+                      <td>Vida Cristã</td>
+                      <td>Bronze</td>
+                      <td>7 meses</td>
+                      <td>Zoom</td>
+                      <td>Bimestral</td>
+                    </tr>
 
+                    <tr class="teal-ic">
+                      <td>Liderança</td>
+                      <td>Prata</td>
+                      <td>5 matérias com 8 aulas cada</td>
+                      <td>Plataforma EAD</td>
+                      <td>Disponível</td>
+                    </tr>
 
-<div class="container py-5">
-  <!--Section: Testimonials v.3-->
-  <section id="section2" class="section team-section text-center pb-5 mb-5 wow fadeIn" data-wow-delay="0.3s">
-    <!-- Grid row -->
-    <div class="row mb-4 m-0">
-    <!--Main Layout-->
-    <style>
-      @media (min-width: 1024px) {
-        .table-container{
-        background: #fafafa;
-        box-shadow: none;
-        }
-        .table-shadow-container{
-          background: #fafafa;
-          box-shadow: none;
-        }
-      }
-      
-      .table td,
-      .table tr{
-        border: 1px solid;
-      }
-    </style>
-      <div class="table-container mx-auto">
-        <div class="table-shadow-container">
-          <table class="table">
-            <thead class="teal white-ic">
-              <tr class="teal-ic">
-                <th scope="col"><h4 class="m-0 white-ic"><b>CURSO</b></h4></th>
-                <th scope="col"><h4 class="m-0 white-ic"><b>CLASSIFICAÇÃO</b></h4></th>
-                <th scope="col"><h4 class="m-0 white-ic"><b>DURAÇÃO</b></h4></th>
-                <th scope="col"><h4 class="m-0 white-ic"><b>MÉTODO</b></h4></th>
-                <th scope="col"><h4 class="m-0 white-ic"><b>CICLO DE LANÇAMENTO</b></h4></th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr class="teal-ic">
-                  <td>Vida Cristã </td>
-                  <td>Bronze</td>
-                  <td>7 meses</td>
-                  <td>Zoom</td>
-                  <td>Bimestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Liderança</td>
-                  <td>Prata</td>
-                  <td>5 matérias com 8 aulas cada</td>
-                  <td>Plataforma EAD</td>
-                  <td>Disponível</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Adoração Como Forma de Vida</td>
-                  <td>Ouro</td>
-                  <td>21 aulas</td>
-                  <td>Plataforma EAD</td>
-                  <td>Disponível</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Como Estudar a Bíblia</td>
-                  <td>Ouro</td>
-                  <td>8 aulas</td>
-                  <td>YouTube YAH CHURCH</td>
-                  <td>Disponível na Play list: Podium</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>EBD – Escola Bíblica Dominical</td>
-                  <td>Ouro</td>
-                  <td>-</td>
-                  <td>YouTube YAH CHURCH</td>
-                  <td>Semanal</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>História da Igreja</td>
-                  <td>Ouro</td>
-                  <td>10 semanas</td>
-                  <td>Zoom e EAD</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Panorama bíblico</td>
-                  <td>Ouro</td>
-                  <td>12 semanas</td>
-                  <td>Zoom e EAD</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Capelania e Visitação</td>
-                  <td>Ouro</td>
-                  <td>9 aulas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Princípios de aconselhamento cristão</td>
-                  <td>Ouro</td>
-                  <td>8 aulas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-                </tbody>
-                <thead class="teal white-ic">
-                  <tr class="teal-ic">
-                    <th class="text-center" scope="col" colspan="5"><h5 class="m-0 white-ic">CURSOS DE FINANÇAS</h5></th>
-                  </tr>
-                </thead>
-                <tbody>
-                <tr class="teal-ic">
-                  <td>Finanças pessoais e empresariais à luz da Bíblia</td>
-                  <td>Ouro</td>
-                  <td>-</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Progresso profissional já</td>
-                  <td>Ouro</td>
-                  <td>14 semanas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-              </tbody>
-              <thead class="teal white-ic">
-                <tr class="teal-ic">
-                  <th class="text-center" scope="col" colspan="5"><h5 class="m-0 white-ic">CURSOS SOBRE FAMÍLIA</h5></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="teal-ic">
-                  <td>Casamento em Foco</td>
-                  <td>Ouro</td>
-                  <td>8 aulas</td>
-                  <td>YouTube YAH CHURCH</td>
-                  <td>Disponível na Play list: Podium</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Curso de noivos</td>
-                  <td>Ouro</td>
-                  <td>6 semanas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Filhos, herança do Senhor</td>
-                  <td>Ouro</td>
-                  <td>8 semanas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Vinho Novo</td>
-                  <td>Ouro</td>
-                  <td>8 semanas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Vinho Novo (nível 2)</td>
-                  <td>Ouro</td>
-                  <td>8  semanas</td>
-                  <td>Zoom</td>
-                  <td>Semestral</td>
-                </tr>
-              </tbody>
-              <thead class="teal white-ic">
-                <tr class="teal-ic">
-                  <th class="text-center" scope="col" colspan="5"><h5 class="m-0 white-ic">CURSOS PARA JOVENS</h5></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="teal-ic">
-                  <td>BASES 2Y</td>
-                  <td>Bronze</td>
-                  <td>4 aulas </td>
-                  <td>Zoom e Presencial</td>
-                  <td>Semestral</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>Vida Cristã 2Y</td>
-                  <td>Bronze</td>
-                  <td>4 aulas </td>
-                  <td>Zoom e Presencial</td>
-                  <td>Anual</td>
-                </tr>
-                
-                <tr class="teal-ic">
-                  <td>2Y School</td>
-                  <td>Ouro</td>
-                  <td>10 aulas </td>
-                  <td>Zoom e Presencial</td>
-                  <td>Anual</td>
-                </tr>
-        
-        
-            </tbody>
-          </table>
-        </div>
+                    <tr class="teal-ic">
+                      <td>Adoração Como Forma de Vida</td>
+                      <td>Ouro</td>
+                      <td>21 aulas</td>
+                      <td>Plataforma EAD</td>
+                      <td>Disponível</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Como Estudar a Bíblia</td>
+                      <td>Ouro</td>
+                      <td>8 aulas</td>
+                      <td>YouTube YAH CHURCH</td>
+                      <td>Disponível na Play list: Podium</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>EBD – Escola Bíblica Dominical</td>
+                      <td>Ouro</td>
+                      <td>-</td>
+                      <td>YouTube YAH CHURCH</td>
+                      <td>Semanal</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>História da Igreja</td>
+                      <td>Ouro</td>
+                      <td>10 semanas</td>
+                      <td>Zoom e EAD</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Panorama bíblico</td>
+                      <td>Ouro</td>
+                      <td>12 semanas</td>
+                      <td>Zoom e EAD</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Capelania e Visitação</td>
+                      <td>Ouro</td>
+                      <td>9 aulas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Princípios de aconselhamento cristão</td>
+                      <td>Ouro</td>
+                      <td>8 aulas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+                  </tbody>
+                  <thead class="teal white-ic">
+                    <tr class="teal-ic">
+                      <th class="text-center" scope="col" colspan="5">
+                        <h5 class="m-0 white-ic">CURSOS DE FINANÇAS</h5>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="teal-ic">
+                      <td>Finanças pessoais e empresariais à luz da Bíblia</td>
+                      <td>Ouro</td>
+                      <td>-</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Progresso profissional já</td>
+                      <td>Ouro</td>
+                      <td>14 semanas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+                  </tbody>
+                  <thead class="teal white-ic">
+                    <tr class="teal-ic">
+                      <th class="text-center" scope="col" colspan="5">
+                        <h5 class="m-0 white-ic">CURSOS SOBRE FAMÍLIA</h5>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="teal-ic">
+                      <td>Casamento em Foco</td>
+                      <td>Ouro</td>
+                      <td>8 aulas</td>
+                      <td>YouTube YAH CHURCH</td>
+                      <td>Disponível na Play list: Podium</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Curso de noivos</td>
+                      <td>Ouro</td>
+                      <td>6 semanas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Filhos, herança do Senhor</td>
+                      <td>Ouro</td>
+                      <td>8 semanas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Vinho Novo</td>
+                      <td>Ouro</td>
+                      <td>8 semanas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Vinho Novo (nível 2)</td>
+                      <td>Ouro</td>
+                      <td>8 semanas</td>
+                      <td>Zoom</td>
+                      <td>Semestral</td>
+                    </tr>
+                  </tbody>
+                  <thead class="teal white-ic">
+                    <tr class="teal-ic">
+                      <th class="text-center" scope="col" colspan="5">
+                        <h5 class="m-0 white-ic">CURSOS PARA JOVENS</h5>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="teal-ic">
+                      <td>BASES 2Y</td>
+                      <td>Bronze</td>
+                      <td>4 aulas</td>
+                      <td>Zoom e Presencial</td>
+                      <td>Semestral</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>Vida Cristã 2Y</td>
+                      <td>Bronze</td>
+                      <td>4 aulas</td>
+                      <td>Zoom e Presencial</td>
+                      <td>Anual</td>
+                    </tr>
+
+                    <tr class="teal-ic">
+                      <td>2Y School</td>
+                      <td>Ouro</td>
+                      <td>10 aulas</td>
+                      <td>Zoom e Presencial</td>
+                      <td>Anual</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!--Div: Container -->
+      <div class="container py-5">
+        <style>
+          .testimonial-card .card-up {
+            overflow: hidden;
+            height: 120px;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+          }
+          .testimonial-card .avatar {
+            border-radius: 50%;
+            width: 120px;
+            margin-top: -60px;
+            overflow: hidden;
+            border: 5px solid #fff;
+          }
+        </style>
+        <!--Section: Testimonials v.3-->
+        <section class="text-center">
+          <!-- Grid row -->
+          <div class="row mb-4 m-0">
+            <!-- Card Casados Para Sempre -->
+
+            <div class="col-lg-6 card-live mb-3">
+              <div class="card testimonial-card">
+                <div
+                  class="card-up lighten-1"
+                  style="
+                    background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoYoutube.jpg')
+                      no-repeat center top / cover;
+                  "
+                ></div>
+                <div class="mx-auto white">
+                  <div
+                    class="rounded-circle"
+                    style="
+                      background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoYoutube.jpg')
+                        no-repeat center center / cover;
+                      height: 200px;
+                      border-radius: 50%;
+                      width: 200px;
+                      margin-top: -60px;
+                      overflow: hidden;
+                      box-shadow: 0px 0px 0px 5px white;
+                    "
+                  ></div>
+                </div>
+                <!-- Content -->
+                <div class="card-body">
+                  <h5 class="text-center fw-bold lh-lg">YOUTUBE YAH Church</h5>
+                  <p class="text-center lh-lg">
+                    Podium na WEB, são cursos livres e gratuitos para
+                    aprofundamento e estudos bíblicos. Estão disponíveis e
+                    acessíveis para os interessados no YouTube YAH Church,
+                    PlayList PODIUM.
+                  </p>
+                  <hr />
+                  <div class="p-4">
+                    <div class="btn-group">
+                      <a
+                        href="https://www.youtube.com/playlist?list=PL51Ix80M6jPrl0E5oKmKVlGUqajiN3PNO"
+                        class="btn btn-cyan cyan darken-2"
+                        >YouTube</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 card-live mb-3">
+              <div class="card testimonial-card">
+                <div
+                  class="card-up lighten-1"
+                  style="
+                    background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoEAD.jpg')
+                      no-repeat center top / cover;
+                  "
+                ></div>
+                <div class="mx-auto white">
+                  <div
+                    class="rounded-circle"
+                    style="
+                      background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoEAD.jpg')
+                        no-repeat center center / cover;
+                      height: 200px;
+                      border-radius: 50%;
+                      width: 200px;
+                      margin-top: -60px;
+                      overflow: hidden;
+                      box-shadow: 0px 0px 0px 5px white;
+                    "
+                  ></div>
+                </div>
+                <!-- Content -->
+                <div class="card-body">
+                  <h5 class="text-center fw-bold lh-lg">
+                    EAD: O Ensino A Distância
+                  </h5>
+                  <p class="text-center lh-lg">
+                    Funciona de uma forma prática e simples. O curso acontece
+                    via internet, em um ambiente virtual de aprendizagem. É uma
+                    sala de aula virtual onde o aluno assiste as aulas em vídeo,
+                    acessa os conteúdos em texto, realiza as tarefas e
+                    exercícios. Nele o aluno tem a capacidade de gerenciar seu
+                    próprio aprendizado, possui uma grande autonomia para
+                    estudar e “assistir” as aulas de acordo com seu tempo
+                    disponível. Os cursos são gratuitos e a frequência é
+                    controlada. É exigido no mínimo a realização de 75% do curso
+                    para o recebimento do certificado.
+                  </p>
+                  <hr />
+                  <div class="p-4">
+                    <div class="btn-group">
+                      <a
+                        href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-ead/"
+                        class="btn"
+                        >Cursos EAD</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 card-live mb-3">
+              <div class="card testimonial-card">
+                <div
+                  class="card-up lighten-1"
+                  style="
+                    background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoZoom.jpg')
+                      no-repeat center top / cover;
+                  "
+                ></div>
+                <div class="mx-auto white">
+                  <div
+                    class="rounded-circle"
+                    style="
+                      background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoZoom.jpg')
+                        no-repeat center center / cover;
+                      height: 200px;
+                      border-radius: 50%;
+                      width: 200px;
+                      margin-top: -60px;
+                      overflow: hidden;
+                      box-shadow: 0px 0px 0px 5px white;
+                    "
+                  ></div>
+                </div>
+                <!-- Content -->
+                <div class="card-body">
+                  <h5 class="text-center fw-bold lh-lg">ZOOM</h5>
+                  <p class="text-center lh-lg">
+                    Para cursos que exigem a interação com o professor e grupo
+                    de alunos. É obrigatória a inscrição antecipada via
+                    aplicativo ou site YAH CHURCH. Os cursos são gratuitos e
+                    também é obrigatória a frequência mínima de 75% para o
+                    recebimento do certificado.
+                  </p>
+                  <hr />
+                  <div class="p-4">
+                    <div class="btn-group">
+                      <a
+                        href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-zoom/"
+                        class="btn btn-cyan cyan darken-2"
+                        >Cursos Zoom</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 card-live mb-3">
+              <div class="card testimonial-card">
+                <div
+                  class="card-up lighten-1"
+                  style="
+                    background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoPresencial.jpg')
+                      no-repeat center top / cover;
+                  "
+                ></div>
+                <div class="mx-auto white">
+                  <div
+                    class="rounded-circle"
+                    style="
+                      background: url('https://wallaceanjos.github.io/yah-church-world-map/img/BotaoPresencial.jpg')
+                        no-repeat center center / cover;
+                      height: 200px;
+                      border-radius: 50%;
+                      width: 200px;
+                      margin-top: -60px;
+                      overflow: hidden;
+                      box-shadow: 0px 0px 0px 5px white;
+                    "
+                  ></div>
+                </div>
+                <!-- Content -->
+                <div class="card-body">
+                  <h5 class="text-center fw-bold lh-lg">PRESENCIAIS</h5>
+                  <p class="text-center lh-lg">
+                    Atualmente os cursos na modalidade presencial estão
+                    suspensos.
+                  </p>
+                  <hr />
+                  <div class="p-4">
+                    <div class="btn-group">
+                      <a href="#" class="btn btn-cyan cyan darken-2 disabled"
+                        >Inscrição</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </section>
-</div>
-
-<!--Div: Container -->
-<div class="container py-5">
-  <!--Section: Testimonials v.3-->
-  <section id="section2" class="section team-section text-center pb-5 mb-5 wow fadeIn" data-wow-delay="0.3s">
-    <!-- Grid row -->
-    <div class="row mb-4 m-0">
-      <!-- Card Casados Para Sempre -->
-      
-      <div class="col-lg-6 card-live mb-3">
-        <div class="card testimonial-card">
-          <div class="card-up lighten-1" style="background:url('../../img/BotaoYoutube.jpg')no-repeat center top / cover;"></div>
-          <div class="mx-auto white">
-            <div class="rounded-circle" style="background:url('../../img/BotaoYoutube.jpg')no-repeat center center / cover;height: 200px;border-radius: 50%;width: 200px;margin-top: -60px;overflow: hidden;box-shadow: 0px 0px 0px 5px white;"></div>
-          </div>
-          <!-- Content -->
-          <div class="card-body">
-            <h5 class="card-title">YOUTUBE YAH Church</h5>
-            <p class="card-text text-center w-responsive lead mx-auto pt-3"> 
-              Podium na WEB, são cursos livres e gratuitos para aprofundamento e estudos bíblicos. Estão disponíveis e acessíveis para os interessados no YouTube YAH Church, PlayList PODIUM.</p>
-            <hr>
-            <div class="p-4">
-              <div class="btn-group">
-                <a href="https://www.youtube.com/playlist?list=PL51Ix80M6jPrl0E5oKmKVlGUqajiN3PNO" class="btn btn-cyan cyan darken-2">You Tube</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 card-live mb-3">
-        <div class="card testimonial-card">
-          <div class="card-up lighten-1"style="background:url('../../img/BotaoEAD.jpg')no-repeat center top / cover;"></div>
-          <div class="mx-auto white">
-            <div class="rounded-circle" style="background:url('../../img/BotaoEAD.jpg')no-repeat center center / cover;height: 200px;border-radius: 50%;width: 200px;margin-top: -60px;overflow: hidden;box-shadow: 0px 0px 0px 5px white;"></div>
-          </div>
-          <!-- Content -->
-          <div class="card-body">
-            <h5 class="card-title">EAD: O Ensino A Distância</h5>
-            <p class="card-text text-center w-responsive lead mx-auto pt-3"> 
-              Funciona de uma forma prática e simples. O curso acontece via internet, em um ambiente virtual de aprendizagem. É uma sala de aula virtual onde o aluno assiste as aulas em vídeo, acessa os conteúdos em texto, realiza as tarefas e exercícios. Nele o aluno tem a capacidade de gerenciar seu próprio aprendizado, possui uma grande autonomia para estudar e “assistir” as aulas de acordo com seu tempo disponível. Os cursos são gratuitos e a frequência é controlada. É exigido no mínimo a realização de 75% do curso para o recebimento do certificado.</p>
-            <hr>
-            <div class="p-4">
-              <div class="btn-group">
-                <a href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-ead/" class="btn btn-cyan cyan darken-2">Cursos EAD</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 card-live mb-3">
-        <div class="card testimonial-card">
-          <div class="card-up lighten-1"style="background:url('../../img/BotaoZoom.jpg')no-repeat center top / cover;"></div>
-          <div class="mx-auto white">
-            <div class="rounded-circle" style="background:url('../../img/BotaoZoom.jpg')no-repeat center center / cover;height: 200px;border-radius: 50%;width: 200px;margin-top: -60px;overflow: hidden;box-shadow: 0px 0px 0px 5px white;"></div>
-          </div>
-          <!-- Content -->
-          <div class="card-body">
-            <h5 class="card-title">ZOOM</h5>
-            <p class="card-text text-center w-responsive lead mx-auto pt-3"> 
-              Para cursos que exigem a interação com o professor e grupo de alunos. É obrigatória a inscrição antecipada via aplicativo ou site YAH CHURCH. Os cursos são gratuitos e também é obrigatória a frequência mínima de 75% para o recebimento do certificado.</p>
-            <hr>
-            <div class="p-4">
-              <div class="btn-group">
-                <a href="https://wallaceanjos.github.io/yah-church-world-map/paginas/cursos-zoom/" class="btn btn-cyan cyan darken-2">Cursos Zoom</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 card-live mb-3">
-        <div class="card testimonial-card">
-          <div class="card-up lighten-1"style="background:url('../../img/BotaoPresencial.jpg')no-repeat center top / cover;"></div>
-          <div class="mx-auto white">
-            <div class="rounded-circle" style="background:url('../../img/BotaoPresencial.jpg')no-repeat center center / cover;height: 200px;border-radius: 50%;width: 200px;margin-top: -60px;overflow: hidden;box-shadow: 0px 0px 0px 5px white;"></div>
-          </div>
-          <!-- Content -->
-          <div class="card-body">
-            <h5 class="card-title">PRESENCIAIS</h5>
-            <p class="card-text text-center w-responsive lead mx-auto pt-3"> 
-              Atualmente os cursos na modalidade presencial estão suspensos.</p>
-            <hr>
-            <div class="p-4">
-              <div class="btn-group">
-                <a href="#" class="btn btn-cyan cyan darken-2 disabled">Inscrição</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-</div>
-
-<!--  SCRIPTS cdnjs  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- iframe resize -->
-<script src="https://wallaceanjos.github.io/yah-church-world-map/js/iFrameResizer.contentWindow.min.js"></script> 
-</body>
+  </body>
 </html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/matcha-ds@1.0.5/assets/utilities/mds-bs.css" rel="stylesheet" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="mds-bootstrap-5">
+    <!-- [INÍCIO] CONFIG - LARGURA DA TELA --===============================================-->
+    <style>
+      :root {
+        --white: #fff;
+        --primary: #1e8989;
+        --primary-soft: #1e898988;
+        --primary-dark: #176666;
+        --secondary: #f4f4f4;
+        --secondary-soft: #1e898988;
+      }
+
+      html,
+      body {
+        background: transparent;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .page.container.row {
+        width: 100%;
+        padding: 0;
+      }
+
+      #page.container,
+      .home-about>.section-body {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border: 0;
+        padding: 0;
+        /* overflow: hidden; */
+        background-color: transparent;
+      }
+
+      .page-section {
+        padding: 0px;
+        margin: 0;
+      }
+
+      /*Background e Foreground*/
+      .mds-bootstrap-5 .fg-primary {
+        color: var(--primary) !important;
+      }
+
+      .mds-bootstrap-5 .bg-primary {
+        background-color: var(--primary) !important;
+      }
+
+      .mds-bootstrap-5 .fg-white {
+        color: var(--white) !important;
+      }
+
+      /*Botões Basic*/
+      .mds-bootstrap-5 .btn {
+        font-size: 1em !important;
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn:hover {
+        background-color: var(--primary);
+        color: var(--secondary);
+        border: 2px solid var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn:focus {
+        color: #fff;
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      .mds-bootstrap-5 .btn:active:focus {
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      /*Botões Filled Primary*/
+      .mds-bootstrap-5 .btn-primary {
+        font-size: 1em !important;
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+        color: var(--white);
+      }
+
+      .mds-bootstrap-5 .btn-primary:hover {
+        background-color: var(--primary);
+        color: var(--secondary);
+        border: 2px solid var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn-primary:focus {
+        color: #fff;
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      .mds-bootstrap-5 .btn-primary:active:focus {
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      /*Botões Filled Circle Primary*/
+      .mds-bootstrap-5 .btn-circle {
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+        color: var(--white);
+        line-height: 22px;
+        height: 40px;
+        width: 40px;
+        font-size: 16px!important;
+        border-radius: 9999px!important;
+        padding: 8px!important;
+      }
+
+      .mds-bootstrap-5 .btn-circle:hover {
+        background-color: var(--primary);
+        color: var(--secondary);
+        border: 2px solid var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn-circle:focus {
+        color: #fff;
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      .mds-bootstrap-5 .btn-circle:active:focus {
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+
+      /*Multiuse Page Reset*/
+      .page-inner body {
+        background-color: var(--white);
+      }
+
+      .page-inner .row>[class*='col'] {
+        padding: 0 0;
+        margin: 0 0;
+      }
+
+      .page,
+      .page-inner {
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: 2em !important;
+        background-color: var(--secondary);
+      }
+
+      .page-inner span.badge,
+      .page-inner p.badge {
+        font-size: 0.75em;
+        line-height: 1em !important;
+        margin: 0;
+      }
+
+      .page-inner.h1,
+      .page-inner h1 {
+        font-size: 2em !important;
+        font-weight: bold;
+      }
+
+      .page-inner.h2,
+      .page-inner h2 {
+        font-size: 1.6em !important;
+      }
+
+      .page-inner .h4,
+      .page-inner h4 {
+        font-size: 1.4em !important;
+        font-weight: bold;
+      }
+
+      .page-inner p {
+        line-height: 2em !important;
+        font-size: 1em !important;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+    <!--===============================================-- -- [FINAL] CONFIG - LARGURA DA TELA -->
+    <!-- [INÍCIO] SECTION - MIDIAS SOCIAIS --===============================================-->
+    <style>
+      @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css');
+
+      /* loading animation begin */
+      @keyframes loadbar {
+        0% {
+          background-color: var(--primary);
+          width: 0;
+          height: 4px;
+          opacity: 0.3;
+        }
+
+        97% {
+          background-color: var(--primary);
+          opacity: 1;
+          height: 4px;
+          width: 100%;
+        }
+
+        100% {
+          background-color: var(--primary);
+          height: 0;
+          opacity: 1;
+        }
+      }
+
+      .loading-animation {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        animation-name: loadbar;
+        animation-duration: 5s;
+      }
+
+      /* loading animation end */
+      .multiuse-pages-section-socialbar {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        margin: 0;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group a {
+        display: inline-block;
+        margin: 0px auto;
+        padding: 10px 40px;
+        text-align: center;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar {
+        width: 100%;
+        background-color: var(--secondary);
+        border: 0px solid #222;
+        transition: all linear 200ms;
+        line-height: 1.15;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group {
+        margin: 0;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group a {
+        display: inline-block;
+        margin: 0px auto;
+        padding: 10px 30px;
+        text-align: center;
+        color: var(--primary);
+        transition: all linear 200ms;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group a:hover {
+        color: #ffffff;
+      }
+
+      .multiuse-pages-section-socialbar :hover.socialbar {
+        box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.35);
+      }
+
+      .multiuse-pages-section-socialbar img {
+        height: 20px;
+        width: 20px;
+        display: flex;
+      }
+    </style>
+    <section class="multiuse-pages-section-socialbar">
+      <div class="socialbar">
+        <div class="loading-animation"></div>
+        <div class="social-link-group text-center">
+          <a href="#" target="blank"> <img src="https://yahchurch.com/assets/batistapalavraviva/images/facebook.svg" alt="" /> </a> <a href="#"
+            target="blank"> <img src="https://yahchurch.com/assets/batistapalavraviva/images/instagram.svg" alt="" />
+          </a>
+          <a href="#" target="blank"> <img src="https://yahchurch.com/assets/batistapalavraviva/images/youtube.svg" alt="" /> </a> </div>
+      </div>
+    </section>
+    <!--===============================================-- -- [FINAL] SECTION - MIDIAS SOCIAIS -->
+    <!-- [INÍCIO] SECTION - STORY==================================================-->
+    <style>
+      .multiuse-pages-section-story {
+        background-color: var(--white);
+        text-align: center;
+        padding: 80px 0 20px 0;
+      }
+
+      .multiuse-pages-section-story .underline {
+        width: 100px;
+        height: 5px;
+        margin: 10px auto 50px;
+        border-radius: 10px;
+        background-color: var(--primary);
+      }
+    </style>
+    <section class="multiuse-pages-section-story">
+      <div class="container-fluid">
+        <div class="container">
+          <h1 class="font-weight-bold text-center h1"> Sobre os cursos no Youtube </h1>
+          <div class="underline"></div>
+        </div>
+      </div>
+    </section><!-- [FINAL] SECTION - STORY==================================================-->
+    <!-- [INÍCIO] SECTION - TABS PROGRAMAÇÃO==================================================-->
+    <style>
+      .multiuse-pages-section-tabs {
+        background-color: var(--white);
+        text-align: center;
+        padding: 0 0 80px 0;
+      }
+
+      .multiuse-pages-section-tabs .bio-card {
+        background: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px 0px #1e89891c;
+      }
+
+      .multiuse-pages-section-tabs .blue-gradient {
+        background: linear-gradient(40deg, #212121, #170f49, #170f49) !important;
+        border-radius: 8px;
+        color: var(--white);
+        padding: 40px 8px;
+        margin: 0 0 40px 0;
+      }
+
+      .multiuse-pages-section-tabs .cyan-gradient {
+        background: linear-gradient(40deg, #006064, #009ea5, #009ea5) !important;
+        border-radius: 8px;
+        color: var(--white);
+        padding: 40px 8px;
+        margin: 0 0 40px 0;
+      }
+    </style>
+    <style>
+      /* Android 2.3 :checked fix */
+      @keyframes fake {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opactity: 1;
+        }
+      }
+
+      .radio-tabs {
+        display: flex;
+      }
+
+      .radio-tabs .state {
+        display: none;
+      }
+
+      /* Tab button container */
+      .tabs {
+        display: flex;
+        flex-flow: column;
+        text-align: left;
+        padding: 0;
+      }
+
+      /* Tab button */
+      .radio-tabs .tab {
+        display: flex;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .radio-tabs .tab:hover {
+        color: #000;
+        background-color: #f4f4f4;
+        border-right: 2px solid #009ea5;
+        border-radius: 50px 3px 3px 50px;
+      }
+
+      #radio1:checked~.tabs #tab1,
+      #radio2:checked~.tabs #tab2,
+      #radio3:checked~.tabs #tab3 {
+        color: #000;
+        background-color: #eee;
+        border-right: 2px solid #170f49;
+        border-radius: 50px 3px 3px 50px;
+      }
+
+      #radio1:focus~.tabs #tab1,
+      #radio2:focus~.tabs #tab2,
+      #radio3:focus~.tabs #tab3 {
+        background-color: #eee;
+        border-right: 2px solid #170f49;
+        border-radius: 50px 3px 3px 50px;
+      }
+
+      #radio1:checked~.panels #panel1,
+      #radio2:checked~.panels #panel2,
+      #radio3:checked~.panels #panel3 {
+        display: block;
+      }
+
+      .tab-label {
+        font-size: 16px;
+        line-height: 1.6rem;
+        padding: 10px;
+        color: #000;
+        display: flex;
+        width: 100%;
+      }
+
+      .radio-tabs .panels img {
+        margin: 0;
+        padding-left:10px;
+      }
+
+      .radio-tabs .panels .accordion {
+        color: black;
+      }
+
+      .radio-tabs .panel {
+        display: none;
+      }
+    </style>
+    <style>
+      .mds-bootstrap-5 .multiuse-pages-section-tabs .tabs {
+        padding-right: 0;
+        max-height: 50vh;
+        overflow: auto;
+        border-radius: 8px 0 0 8px;
+        background:
+          /* Shadow covers */
+          linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+          /* Shadows */
+          linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%) 0 100%;
+        background:
+          /* Shadow covers */
+          linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+          /* Shadows */
+          linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%) 0 100%;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        /* Opera doesn't support this in the shorthand */
+        background-attachment: local, local, scroll, scroll;
+      }
+
+      @media (min-width: 1024px) {
+        .mds-bootstrap-5 .multiuse-pages-section-tabs .tabs {
+          max-height: 600px;
+          overflow: auto;
+        }
+      }
+    </style>
+    <section class="multiuse-pages-section-tabs">
+      <div class="container-fluid p-2">
+        <div class="container p-0">
+          <div class="radio-tabs row m-0">
+            <input class="state" id="radio1" name="input-state" title="Input1"type="radio" checked />
+            <input class="state" id="radio2" name="input-state" title="Input2" type="radio"/>
+            <input class="state" id="radio3" name="input-state" title="Input3" type="radio"/>
+            
+            <div class="tabs col-lg-3">
+              <label for="radio1" id="tab1" class="tab"><div class="tab-label">Como estudar a Bíblia</div></label>
+              <label for="radio2" id="tab2" class="tab"><div class="tab-label">EBD Digital</div></label>
+              <label for="radio3" id="tab3" class="tab"><div class="tab-label">Casamento em Foco</div></label>
+            </div>
+            <div class="panels col-lg-9 pt-5 pt-lg-0">
+
+              <div id="panel1" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <img src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_EstudarBiblia.jpg" class="w-100 rounded" alt="" />
+                  </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Como estudar a Bíblia</h2>
+                    <p>A Bíblia é um livro rico em estilos e conteúdo. Nela encontramos narrativas, profecias, poesias
+                      e provérbios e, por isso, existem várias alternativas de estudo do seu conteúdo. Neste curso,
+                      apresentaremos as metodologias mais aplicadas e a importância de observar, interpretar e aplicar o
+                      estudo da Bíblia de forma prática para uma vida mais parecida com a que Deus planejou para nós.</p>
+                    <ul>
+                      <li>Duração: 8 vídeos/aula</li>
+                      <li>Certificado: não</li>
+                      <li> Curso livre e acessível no Canal YouTube - Podium na Web </li>
+                    </ul>
+                    <a href="https://www.youtube.com/watch?v=3rp7QFfKb5M&list=PL51Ix80M6jPrl0E5oKmKVlGUqajiN3PNO" class="btn btn-primary" target="_blank">Iniciar</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel2" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_EBD.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>EBD Digital</h2>
+                    <p>Todos os domingos, teremos aulas online da Escola Bíblica Dominical que ao contrário dos demais
+                      cursos do Podium não há uma conclusão, visto que ele é perene e seus temas são variados. Também
+                      não há nenhum curso prévio para participação e novos alunos podem entrar todo domingo.</p>
+                    <ul>
+                      <li> Duração: permanente (estreia de nova aula aos domingos às 14h) </li>
+                      <li>Certificado: não</li>
+                      <li> Curso livre e acessível no Canal YouTube - Podium na Web </li>
+                    </ul>
+                    <a href="https://www.youtube.com/watch?v=3rp7QFfKb5M&list=PL51Ix80M6jPrl0E5oKmKVlGUqajiN3PNO" class="btn btn-primary" target="_blank">Iniciar</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel3" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_CasamentoFoco.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Casamento em Foco</h2>
+                    <p> O curso foi elaborado com o objetivo de ajudar casais, tanto os mais jovens quanto os mais
+                      experientes, a manterem um relacionamento saudável. Os ensinamentos levarão os participantes a
+                      desenvolveram o máximo de seus potenciais. As aulas também darão ferramentas para alcançar o que
+                      Deus planejou para a vida a dois. </p>
+                    <ul>
+                      <li>Casamento em Foco</li>
+                      <li>Duração: 8 vídeos/aula</li>
+                      <li>Certificado: não</li>
+                      <li> Curso livre e acessível no Canal YouTube - Podium na Web </li>
+                    </ul>
+                    <a href="https://www.youtube.com/watch?v=3rp7QFfKb5M&list=PL51Ix80M6jPrl0E5oKmKVlGUqajiN3PNO" class="btn btn-primary" target="_blank">Assista</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

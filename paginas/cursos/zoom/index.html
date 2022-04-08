@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/matcha-ds@1.0.5/assets/utilities/mds-bs.css" rel="stylesheet" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="mds-bootstrap-5">
+    <!-- [INÍCIO] CONFIG - LARGURA DA TELA --===============================================-->
+    <style>
+      :root {
+        --white: #fff;
+        --primary: #1e8989;
+        --primary-soft: #1e898988;
+        --primary-dark: #176666;
+        --secondary: #f4f4f4;
+        --secondary-soft: #1e898988;
+      }
+
+      html,
+      body {
+        background: transparent;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .page.container.row {
+        width: 100%;
+        padding: 0;
+      }
+
+      #page.container,
+      .home-about>.section-body {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border: 0;
+        padding: 0;
+        /* overflow: hidden; */
+        background-color: transparent;
+      }
+
+      .page-section {
+        padding: 0px;
+        margin: 0;
+      }
+
+      /*Background e Foreground*/
+      .mds-bootstrap-5 .fg-primary {
+        color: var(--primary) !important;
+      }
+
+      .mds-bootstrap-5 .bg-primary {
+        background-color: var(--primary) !important;
+      }
+
+      .mds-bootstrap-5 .fg-white {
+        color: var(--white) !important;
+      }
+
+      /*Botões Basic*/
+      .mds-bootstrap-5 .btn {
+        font-size: 1em !important;
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn:hover {
+        background-color: var(--primary);
+        color: var(--secondary);
+        border: 2px solid var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn:focus {
+        color: #fff;
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      .mds-bootstrap-5 .btn:active:focus {
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      /*Botões Filled Primary*/
+      .mds-bootstrap-5 .btn-primary {
+        font-size: 1em !important;
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+        color: var(--white);
+      }
+
+      .mds-bootstrap-5 .btn-primary:hover {
+        background-color: var(--primary);
+        color: var(--secondary);
+        border: 2px solid var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn-primary:focus {
+        color: #fff;
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      .mds-bootstrap-5 .btn-primary:active:focus {
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      /*Botões Filled Circle Primary*/
+      .mds-bootstrap-5 .btn-circle {
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+        color: var(--white);
+        line-height: 22px;
+        height: 40px;
+        width: 40px;
+        font-size: 16px!important;
+        border-radius: 9999px!important;
+        padding: 8px!important;
+      }
+
+      .mds-bootstrap-5 .btn-circle:hover {
+        background-color: var(--primary);
+        color: var(--secondary);
+        border: 2px solid var(--primary);
+      }
+
+      .mds-bootstrap-5 .btn-circle:focus {
+        color: #fff;
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+      .mds-bootstrap-5 .btn-circle:active:focus {
+        box-shadow: 0 0 0 0.25em var(--primary-soft);
+      }
+
+
+      /*Multiuse Page Reset*/
+      .page-inner body {
+        background-color: var(--white);
+      }
+
+      .page-inner .row>[class*='col'] {
+        padding: 0 0;
+        margin: 0 0;
+      }
+
+      .page,
+      .page-inner {
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: 2em !important;
+        background-color: var(--secondary);
+      }
+
+      .page-inner span.badge,
+      .page-inner p.badge {
+        font-size: 0.75em;
+        line-height: 1em !important;
+        margin: 0;
+      }
+
+      .page-inner.h1,
+      .page-inner h1 {
+        font-size: 2em !important;
+        font-weight: bold;
+      }
+
+      .page-inner.h2,
+      .page-inner h2 {
+        font-size: 1.6em !important;
+      }
+
+      .page-inner .h4,
+      .page-inner h4 {
+        font-size: 1.4em !important;
+        font-weight: bold;
+      }
+
+      .page-inner p {
+        line-height: 2em !important;
+        font-size: 1em !important;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+    <!--===============================================-- -- [FINAL] CONFIG - LARGURA DA TELA -->
+    <!-- [INÍCIO] SECTION - MIDIAS SOCIAIS --===============================================-->
+    <style>
+      @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css');
+
+      /* loading animation begin */
+      @keyframes loadbar {
+        0% {
+          background-color: var(--primary);
+          width: 0;
+          height: 4px;
+          opacity: 0.3;
+        }
+
+        97% {
+          background-color: var(--primary);
+          opacity: 1;
+          height: 4px;
+          width: 100%;
+        }
+
+        100% {
+          background-color: var(--primary);
+          height: 0;
+          opacity: 1;
+        }
+      }
+
+      .loading-animation {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        animation-name: loadbar;
+        animation-duration: 5s;
+      }
+
+      /* loading animation end */
+      .multiuse-pages-section-socialbar {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        margin: 0;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group a {
+        display: inline-block;
+        margin: 0px auto;
+        padding: 10px 40px;
+        text-align: center;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar {
+        width: 100%;
+        background-color: var(--secondary);
+        border: 0px solid #222;
+        transition: all linear 200ms;
+        line-height: 1.15;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group {
+        margin: 0;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group a {
+        display: inline-block;
+        margin: 0px auto;
+        padding: 10px 30px;
+        text-align: center;
+        color: var(--primary);
+        transition: all linear 200ms;
+      }
+
+      .multiuse-pages-section-socialbar .socialbar .social-link-group a:hover {
+        color: #ffffff;
+      }
+
+      .multiuse-pages-section-socialbar :hover.socialbar {
+        box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.35);
+      }
+
+      .multiuse-pages-section-socialbar img {
+        height: 20px;
+        width: 20px;
+        display: flex;
+      }
+    </style>
+    <section class="multiuse-pages-section-socialbar">
+      <div class="socialbar">
+        <div class="loading-animation"></div>
+        <div class="social-link-group text-center">
+          <a href="#" target="blank"> <img src="https://yahchurch.com/assets/batistapalavraviva/images/facebook.svg" alt="" /> </a> <a href="#"
+            target="blank"> <img src="https://yahchurch.com/assets/batistapalavraviva/images/instagram.svg" alt="" />
+          </a>
+          <a href="#" target="blank"> <img src="https://yahchurch.com/assets/batistapalavraviva/images/youtube.svg" alt="" /> </a> </div>
+      </div>
+    </section>
+    <!--===============================================-- -- [FINAL] SECTION - MIDIAS SOCIAIS -->
+    <!-- [INÍCIO] SECTION - STORY==================================================-->
+    <style>
+      .multiuse-pages-section-story {
+        background-color: var(--white);
+        text-align: center;
+        padding: 80px 0 20px 0;
+      }
+
+      .multiuse-pages-section-story .underline {
+        width: 100px;
+        height: 5px;
+        margin: 10px auto 50px;
+        border-radius: 10px;
+        background-color: var(--primary);
+      }
+    </style>
+    <section class="multiuse-pages-section-story">
+      <div class="container-fluid">
+        <div class="container">
+          <h1 class="font-weight-bold text-center h1"> Sobre os cursos no Zoom </h1>
+          <div class="underline"></div>
+        </div>
+      </div>
+    </section><!-- [FINAL] SECTION - STORY==================================================-->
+    <!-- [INÍCIO] SECTION - TABS PROGRAMAÇÃO==================================================-->
+    <style>
+      .multiuse-pages-section-tabs {
+        background-color: var(--white);
+        text-align: center;
+        padding: 0 0 80px 0;
+      }
+
+      .multiuse-pages-section-tabs .bio-card {
+        background: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px 0px #1e89891c;
+      }
+
+      .multiuse-pages-section-tabs .blue-gradient {
+        background: linear-gradient(40deg, #212121, #170f49, #170f49) !important;
+        border-radius: 8px;
+        color: var(--white);
+        padding: 40px 8px;
+        margin: 0 0 40px 0;
+      }
+
+      .multiuse-pages-section-tabs .cyan-gradient {
+        background: linear-gradient(40deg, #006064, #009ea5, #009ea5) !important;
+        border-radius: 8px;
+        color: var(--white);
+        padding: 40px 8px;
+        margin: 0 0 40px 0;
+      }
+    </style>
+    <style>
+      /* Android 2.3 :checked fix */
+      @keyframes fake {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opactity: 1;
+        }
+      }
+
+      .radio-tabs {
+        display: flex;
+      }
+
+      .radio-tabs .state {
+        display: none;
+      }
+
+      /* Tab button container */
+      .tabs {
+        display: flex;
+        flex-flow: column;
+        text-align: left;
+        padding: 0;
+      }
+
+      /* Tab button */
+      .radio-tabs .tab {
+        display: flex;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .radio-tabs .tab:hover {
+        color: #000;
+        background-color: #f4f4f4;
+        border-right: 2px solid #009ea5;
+        border-radius: 50px 3px 3px 50px;
+      }
+
+      #radio1:checked~.tabs #tab1,
+      #radio2:checked~.tabs #tab2,
+      #radio3:checked~.tabs #tab3,
+      #radio4:checked~.tabs #tab4,
+      #radio5:checked~.tabs #tab5,
+      #radio6:checked~.tabs #tab6,
+      #radio7:checked~.tabs #tab7,
+      #radio8:checked~.tabs #tab8,
+      #radio9:checked~.tabs #tab9,
+      #radio10:checked~.tabs #tab10,
+      #radio11:checked~.tabs #tab11,
+      #radio12:checked~.tabs #tab12,
+      #radio13:checked~.tabs #tab13,
+      #radio14:checked~.tabs #tab14 {
+        color: #000;
+        background-color: #eee;
+        border-right: 2px solid #170f49;
+        border-radius: 50px 3px 3px 50px;
+      }
+
+      #radio1:focus~.tabs #tab1,
+      #radio2:focus~.tabs #tab2,
+      #radio3:focus~.tabs #tab3,
+      #radio4:focus~.tabs #tab4,
+      #radio5:focus~.tabs #tab5,
+      #radio6:focus~.tabs #tab6,
+      #radio7:focus~.tabs #tab7,
+      #radio8:focus~.tabs #tab8,
+      #radio9:focus~.tabs #tab9,
+      #radio10:focus~.tabs #tab10,
+      #radio11:focus~.tabs #tab11,
+      #radio12:focus~.tabs #tab12,
+      #radio13:focus~.tabs #tab13,
+      #radio14:focus~.tabs #tab14 {
+        background-color: #eee;
+        border-right: 2px solid #170f49;
+        border-radius: 50px 3px 3px 50px;
+      }
+
+      #radio1:checked~.panels #panel1,
+      #radio2:checked~.panels #panel2,
+      #radio3:checked~.panels #panel3,
+      #radio4:checked~.panels #panel4,
+      #radio5:checked~.panels #panel5,
+      #radio6:checked~.panels #panel6,
+      #radio7:checked~.panels #panel7,
+      #radio8:checked~.panels #panel8,
+      #radio9:checked~.panels #panel9,
+      #radio10:checked~.panels #panel10,
+      #radio11:checked~.panels #panel11,
+      #radio12:checked~.panels #panel12,
+      #radio13:checked~.panels #panel13,
+      #radio14:checked~.panels #panel14 {
+        display: block;
+      }
+
+      .tab-label {
+        font-size: 16px;
+        line-height: 1.6rem;
+        padding: 10px;
+        color: #000;
+        display: flex;
+        width: 100%;
+      }
+
+      .radio-tabs .panels img {
+        margin: 0;
+        padding-left:10px;
+      }
+
+      .radio-tabs .panels .accordion {
+        color: black;
+      }
+
+      .radio-tabs .panel {
+        display: none;
+      }
+    </style>
+    <style>
+      .mds-bootstrap-5 .multiuse-pages-section-tabs .tabs {
+        padding-right: 0;
+        max-height: 50vh;
+        overflow: auto;
+        border-radius: 8px 0 0 8px;
+        background:
+          /* Shadow covers */
+          linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+          /* Shadows */
+          linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%) 0 100%;
+        background:
+          /* Shadow covers */
+          linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+          /* Shadows */
+          linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%) 0 100%;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        /* Opera doesn't support this in the shorthand */
+        background-attachment: local, local, scroll, scroll;
+      }
+
+      @media (min-width: 1024px) {
+        .mds-bootstrap-5 .multiuse-pages-section-tabs .tabs {
+          max-height: 600px;
+          overflow: auto;
+        }
+      }
+    </style>
+    <section class="multiuse-pages-section-tabs">
+      <div class="container-fluid p-2">
+        <div class="container p-0">
+          <div class="radio-tabs row m-0">
+            <input class="state" id="radio1" name="input-state" title="Input1"type="radio" checked />
+            <input class="state" id="radio2" name="input-state" title="Input2" type="radio"/>
+            <input class="state" id="radio3" name="input-state" title="Input3" type="radio"/>
+            <input class="state" id="radio4" name="input-state" title="Input4" type="radio"/>
+            <input class="state" id="radio5" name="input-state" title="Input5" type="radio"/>
+            <input class="state" id="radio6" name="input-state" title="Input6" type="radio"/>
+            <input class="state" id="radio7" name="input-state" title="Input7" type="radio"/>
+            <input class="state" id="radio8" name="input-state" title="Input8" type="radio"/>
+            <input class="state" id="radio9" name="input-state" title="Input9" type="radio"/>
+            <input class="state" id="radio10" name="input-state" title="Input10" type="radio"/>
+            <input class="state" id="radio11" name="input-state" title="Input11" type="radio"/>
+            <input class="state" id="radio12" name="input-state" title="Input12" type="radio"/>
+            <input class="state" id="radio13" name="input-state" title="Input13" type="radio"/>
+            <input class="state" id="radio14" name="input-state" title="Input14" type="radio"/>
+            
+            <div class="tabs col-lg-3">
+              <label for="radio1" id="tab1" class="tab"><div class="tab-label">Curso Vida Cristã (Bronze)</div></label>
+              <label for="radio2" id="tab2" class="tab"><div class="tab-label">História da Igreja</div></label>
+              <label for="radio3" id="tab3" class="tab"><div class="tab-label">Panorama bíblico</div></label>
+              <label for="radio4" id="tab4" class="tab"><div class="tab-label">Capelania (ouro)</div></label>
+              <label for="radio5" id="tab5" class="tab"><div class="tab-label">Princípios de Aconselhamento Cristão</div></label>
+              <label for="radio6" id="tab6" class="tab"><div class="tab-label">Finanças pessoais e empresariais à luz da Bíblia</div></label>
+              <label for="radio7" id="tab7" class="tab"><div class="tab-label">Progresso profissional já</div></label>
+              <label for="radio8" id="tab8" class="tab"><div class="tab-label">Curso de Noivos</div></label>
+              <label for="radio9" id="tab9" class="tab"><div class="tab-label">Filhos, herança do Senhor</div></label>
+              <label for="radio10" id="tab10" class="tab"><div class="tab-label">Vinho Novo 1</div></label>
+              <label for="radio11" id="tab11" class="tab"><div class="tab-label">Vinho Novo 2</div></label>
+              <label for="radio12" id="tab12" class="tab"><div class="tab-label">BASES 2Y</div></label>
+              <label for="radio13" id="tab13" class="tab"><div class="tab-label">Vida Cristã 2Y</div></label>
+              <label for="radio14" id="tab14" class="tab"><div class="tab-label">2Y School</div></label>
+            </div>
+            <div class="panels col-lg-9 pt-5 pt-lg-0">
+              <div id="panel1" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <img src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_VidaCrista.jpg" class="w-100 rounded" alt=""/>
+                  </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Curso Vida Cristã (Bronze)</h2>
+                    <p>Curso focado nos princípios essenciais para o crescimento na
+                    vida cristã. Duração de sete meses. Utiliza o livro “Sete passos em sua nova vida com Jesus”,
+                    disponível em Ebook na Amazon ou livro físico na igreja.</p>
+                    <ul>
+                      <li>Aulas por Zoom</li>
+                      <li> Geralmente na segunda-feira, às 20h (mas pode haver exceções) </li>
+                      <li>Inscrições abertas continuamente.</li>
+                      <li> Início de novas turmas todo primeira segunda-feira do mês, de acordo com a demanda de
+                        inscrições. </li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel2" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_HistoriaIgreja.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>História da Igreja</h2>
+                    <p>Um curso aberto para todos que tenham o interesse de conhecer o panorama da história da Igreja e
+                      qual é o papel da Igreja nos dias atuais.</p>
+                    <ul>
+                      <li>Duração: 12 semanas</li>
+                      <li>Horário:</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel3" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_PanoramaBiblico.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Panorama bíblico</h2>
+                    <p> Acreditando que toda Escritura é divinamente inspirada por Deus e útil para as necessidades que
+                      enfrentamos no nosso dia a dia, o principal objetivo do curso Panorama Bíblico é estudar a Bíblia
+                      para vive-La, confessá-La e praticá-La. Nele você terá um estudo da Bíblia na perspectiva
+                      cronológica e desenvolverá maior autonomia no estudo pessoal da Bíblia. </p>
+                    <ul>
+                      <li>Duração: 12 semanas</li>
+                      <li>Horário:</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel4" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_Capelania.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Capelania (ouro)</h2>
+                    <p> Curso de Capelania e Visitação tem como objetivo capacitar cristãos para a evangelização e
+                      expansão do Reino de Deus em hospitais, presídios, asilos, orfanatos, entre outros lugares. Com o
+                      princípio de fomentar conhecimento técnico e prático para o exercício do ministério e auxiliar os
+                      irmãos na identificação de seu chamado, além da capacitação, os participantes que se formarem
+                      receberão uma carteirinha que permite acesso livre aos lugares de visitação. </p>
+                    <ul>
+                      <li>Duração: 9 aulas</li>
+                      <li>Horário: 20h</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel5" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_Aconselhamento.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Princípios de Aconselhamento Cristão</h2>
+                    <p> O curso visa ajudá-lo a entender melhor o comportamento humano à luz da Bíblia e desenvolver
+                      suas habilidades no aconselhamento cristão.</p>
+                    <ul>
+                      <li>Duração: 8 encontros</li>
+                      <li>Horário: 20h</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel6" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_FinancasNegocios.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Finanças pessoais e empresariais à luz da Bíblia</h2>
+                    <p> Curso de 14 semanas que mostrará como os princípios financeiros bíblicos podem transformar sua
+                      vida, trazendo equilíbrio financeiro, realizações familiares, sucesso profissional e maior
+                      crescimento na Vida Cristã. </p>
+                    <ul>
+                      <li>Duração: 14 encontros, 1 vez por semana.</li>
+                      <li>Horário: 20h</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel7" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_ProgressoProfissional.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Progresso profissional já</h2>
+                    <p> O curso busca identificar os 10 princípios bíblicos aplicados ao desenvolvimento de nossa
+                      carreira de acordo com a vida cristã. Com pastor Carlos Colucci. </p>
+                    <ul>
+                      <li>Duração: 10 semanas</li>
+                      <li>Horário:</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel8" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_Noivos.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Curso de Noivos</h2>
+                    <p> Durante 6 encontros os casais aprenderão todos os princípios bíblicos de um casamento. É
+                      indicado para casais que estão em fase de preparação para o casamento ou desejam conhecer mais
+                      sobre a vida a dois. Plataforma Zoom. Inscrição pelo Aplicativo ou Site YAH Church. </p>
+                    <ul>
+                      <li>Duração: 8 encontros as quintas-feiras</li>
+                      <li>Horário: 20h às 21h30</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel9" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_FilhosHeranca.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Filhos, herança do Senhor</h2>
+                    <p> Indicado para pais com filhos de todas as idades. Em 12 aulas, o curso trata de situações
+                      enfrentadas na infância, adolescência, juventude e vida adulta e mostra como educar em cada fase.
+                    </p>
+                    <ul>
+                      <li>Duração: 8 semanas</li>
+                      <li>Horário:</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel10" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_VinhoNovo.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Vinho Novo 1</h2>
+                    <p> O curso Vinho Novo é destinado para casais. São 8 encontros online via Zoom com temas relevantes
+                      sobre o relacionamento matrimonial como, por exemplo, finanças, família, intimidade e comunicação.
+                      A metodologia aplicada é participativa e dá oportunidade de interação e diálogo com os casais.
+                      Cada casal é acompanhado por um casal da equipe do YAH Casais. Ao final, será disponibilizado um
+                      e-book e certificado de conclusão aos inscritos. </p>
+                    <ul>
+                      <li>Duração: 8 encontros as quintas-feiras</li>
+                      <li>Horário: 20h às 21h30</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel11" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_VinhoNovo_Nivel2.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Vinho Novo 2</h2>
+                    <p> É o segundo módulo do curso Vinho Novo é destinado para casais que já realizaram o primeiro
+                      módulo. </p>
+                    <ul>
+                      <li>Duração: 8 encontros as quintas-feiras</li>
+                      <li>Horário: 20h às 21h30</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel12" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_CursoBases2Y.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>BASES 2Y</h2>
+                    <p> Curso voltado para novos convertidos; novos membros da YAH Church; e/ou novos voluntários do 2y.
+                      Apresenta as bases da fé cristã e a confissão de fé da igreja em 4 aulas com temas como: Quem é
+                      Deus; Pecado; Redenção; Igreja; Batismo; Volta de Cristo etc. </p>
+                    <ul>
+                      <li>Duração: 4 semanas</li>
+                      <li>Horário: 15h</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel13" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_VidaCrista2Y.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>Vida Cristã 2Y</h2>
+                    <p> Curso do Podium com 7 passos sobre a vida cristã. Oferecido pelo 2y para os jovens,
+                      principalmente os que estão há pouco tempo na igreja. </p>
+                    <ul>
+                      <li>Duração: 7 meses</li>
+                      <li>Horário: 20h</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="panel14" class="panel animated fadeIn">
+                <div class="row h-100 m-0">
+                  <div class="col-lg-4 d-none d-lg-block"> <img
+                      src="https://wallaceanjos.github.io/yah-church-world-map/img/TelasCursos_2YSchool.jpg"
+                      class="w-100 rounded" alt="" /> </div>
+                  <div class="col-lg-8 text-start lh-lg pl-lg-5">
+                    <h2>2Y School</h2>
+                    <p> Curso presencial dividido por 7 módulos separados e independentes durante o ano. Para se formar
+                      o aluno precisa completar no mínimo 5 módulos. Os temas não são fixos e podem variar ao longo nos
+                      anos. Em 2022 serão oferecidos cursos, como: A obra de Cristo, Liderança, Intercessão, Panorama
+                      bíblico etc. Cada módulo possui 2 aulas ministradas pela equipe de ensino e/ou convidados (heads
+                      do 2y; pastores e líderes da igreja). </p>
+                    <p> Módulos oferecidos:<br /> Abril - A obra de Cristo<br /> Maio - Papel do homem e papel da mulher
+                      <br /> Junho - Cosmovisão bíblica<br /> Julho - Panorama bíblico (curso de férias)<br /> Setembro
+                      - Política e a bíblia<br /> Outubro - O papel da igreja<br /> Novembro - Apocalipse para todos
+                    </p>
+                    <ul>
+                      <li>Duração: 7 meses</li>
+                      <li>Horário: 15h</li>
+                      <li>Via plataforma Zoom</li>
+                      <li>Certificado: a partir de 75% de presença</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" target="_blank">Inscreva-se</a>
+                    <a href="#" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="mailto:podium@yahchurch.com" target="blank" type="button" class="btn btn-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
